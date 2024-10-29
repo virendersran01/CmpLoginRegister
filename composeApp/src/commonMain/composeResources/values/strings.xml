@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IM Pharmacist</string>
+    <string name="login_uppercase">LOGIN</string>
+    <string name="register_uppercase">REGISTER</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="email">Email Address</string>
+    <string name="email_hint">Enter email address</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter password</string>
+    <string name="get_started_uppercase">GET STARTED</string>
+    <string name="category">Category</string>
+    <string name="view_all">View All</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_an_account">Don't have an account? </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="login">Login</string>
+</resources>
