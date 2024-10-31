@@ -9,13 +9,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -68,7 +68,7 @@ fun RegisterScreen(
         modifier = modifier
             .fillMaxSize()
             .background(
-                color = MaterialTheme.colors.surface
+                color = MaterialTheme.colorScheme.surface
             )
             .padding(horizontal = 20.dp)
             .verticalScroll(rememberScrollState()),
@@ -89,7 +89,7 @@ fun RegisterScreen(
                 )
             ),
             fontSize = 16.sp,
-            color = MaterialTheme.colors.secondaryVariant,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
 
         FullNameInputCard(
@@ -151,7 +151,7 @@ private fun FullNameInputCard(
             Icon(
                 painter = painterResource(Res.drawable.user),
                 contentDescription = null,
-                tint = MaterialTheme.colors.onSurface
+                tint = MaterialTheme.colorScheme.onSurface
             )
         }
         /*keyboardActions = KeyboardActions(
@@ -186,7 +186,7 @@ private fun EmailInputCard(
             Icon(
                 imageVector = Icons.Rounded.Email,
                 contentDescription = null,
-                tint = MaterialTheme.colors.onSurface
+                tint = MaterialTheme.colorScheme.onSurface
             )
         }
         /*keyboardActions = KeyboardActions(
@@ -221,7 +221,7 @@ private fun PhoneNumberInputCard(
             Icon(
                 painter = painterResource(Res.drawable.phone),
                 contentDescription = null,
-                tint = MaterialTheme.colors.onSurface
+                tint = MaterialTheme.colorScheme.onSurface
             )
         }
         /*keyboardActions = KeyboardActions(
@@ -279,7 +279,7 @@ private fun PasswordInputCard(
                         else Res.drawable.visibility
                     ),
                     contentDescription = null,
-                    tint = MaterialTheme.colors.onSurface
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
 
@@ -315,7 +315,7 @@ fun LoginButton(
                 append(stringResource(Res.string.already_have_an_account))
                 withStyle(
                     style = SpanStyle(
-                        color = MaterialTheme.colors.primary,
+                        color = MaterialTheme.colorScheme.primary,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -324,7 +324,7 @@ fun LoginButton(
                 }
             },
             fontSize = 15.sp,
-            color = MaterialTheme.colors.secondaryVariant,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             fontFamily = FontFamily(
                 Font(
                     resource = Res.font.poppins_medium

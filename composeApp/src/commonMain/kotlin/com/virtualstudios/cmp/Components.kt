@@ -4,15 +4,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,11 +38,11 @@ fun Button(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     colors: ButtonColors = ButtonDefaults.buttonColors(
-        backgroundColor = MaterialTheme.colors.primary,
-        contentColor = MaterialTheme.colors.onPrimary
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary
     ),
 ) {
-    Button(
+    androidx.compose.material3.Button(
         onClick = onClick,
         modifier = modifier,
         shape = MaterialTheme.shapes.small,
@@ -77,7 +78,9 @@ fun InputCard(
 
     Card(
         shape = MaterialTheme.shapes.small,
-        backgroundColor = MaterialTheme.colors.background,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.inverseOnSurface
+        ),
         modifier = modifier
 //            .padding(
 //                top = 12.dp,
@@ -101,7 +104,7 @@ fun InputCard(
             placeholder = {
                 Text(
                     text = inputHint,
-                    color = MaterialTheme.colors.onSurface,
+                    color = MaterialTheme.colorScheme.onSurface,
                     fontFamily = FontFamily(
                         Font(
                             resource = Res.font.poppins_regular
@@ -120,11 +123,12 @@ fun InputCard(
                 ),
                 fontSize = 16.sp
             ),
-            colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = MaterialTheme.colors.secondaryVariant,
-                unfocusedIndicatorColor = MaterialTheme.colors.secondaryVariant,
-                focusedIndicatorColor = MaterialTheme.colors.secondaryVariant,
-                cursorColor = MaterialTheme.colors.onSurface
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = MaterialTheme.colorScheme.inverseOnSurface,
+                unfocusedContainerColor = MaterialTheme.colorScheme.inverseOnSurface,
+                unfocusedIndicatorColor = MaterialTheme.colorScheme.inverseOnSurface,
+                focusedIndicatorColor = MaterialTheme.colorScheme.inverseOnSurface,
+                cursorColor = MaterialTheme.colorScheme.inverseOnSurface
             ),
             keyboardOptions = keyboardOptions,
             visualTransformation = visualTransformation,
@@ -150,13 +154,13 @@ private fun HeaderTextPreview() {
 fun HeaderText(
     text: String,
     modifier: Modifier = Modifier,
-    color: Color = MaterialTheme.colors.onSurface,
+    color: Color = MaterialTheme.colorScheme.onSurface,
 ) {
 
     Text(
         text = text,
         color = color,
-        fontFamily = MaterialTheme.typography.h1.fontFamily,
+        fontFamily = MaterialTheme.typography.headlineLarge.fontFamily,
         fontWeight = FontWeight.Medium,
         fontSize = 20.sp,
         modifier = modifier
@@ -167,7 +171,7 @@ fun HeaderText(
 fun TitleText(
     text: String,
     modifier: Modifier = Modifier,
-    color: Color = MaterialTheme.colors.onSurface,
+    color: Color = MaterialTheme.colorScheme.onSurface,
     fontSize: TextUnit = 20.sp,
 ) {
     Text(
@@ -187,7 +191,7 @@ fun TitleText(
 fun InputFieldTitle(
     text: String,
     modifier: Modifier = Modifier,
-    color: Color = MaterialTheme.colors.onSurface,
+    color: Color = MaterialTheme.colorScheme.onSurface,
 ) {
     Text(
         text = text,
